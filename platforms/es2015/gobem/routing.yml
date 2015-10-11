@@ -1,0 +1,27 @@
+root:
+    url: /
+    method: get
+    destination:
+        page: p-todo
+        wrapper: w-app
+
+auth:
+    url: /signin
+    method: get
+    destination:
+        page: p-auth
+        wrapper: w-app
+
+about:
+    url: /about
+    method: get
+    destination:
+        page: p-about
+        wrapper: w-app
+
+error:
+    url: /error
+    method: get
+    destination:
+        page: p-error
+        wrapper: w-app

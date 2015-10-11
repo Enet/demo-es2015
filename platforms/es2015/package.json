@@ -1,0 +1,35 @@
+{
+    "name": "es2015",
+    "version": "0.0.1",
+    "description": "Demonstrative platform to build the project based on web-components architecture.",
+    "main": "index.js",
+    "dependencies": {
+        "async": "*",
+        "redis": "*",
+        "justjst": "*",
+        "alasym": "*",
+        "reqponse": "*",
+        "reddiz": "*",
+        "gobem": "*",
+        "gobem-proc-concat": "*",
+        "gobem-proc-filter": "*",
+        "gobem-proc-stylus": "*",
+        "gobem-proc-sqwish": "*",
+        "gobem-proc-prettydiff": "*",
+        "gobem-proc-jst": "*",
+        "gobem-proc-serve": "*",
+        "gobem-proc-set-handler": "*",
+        "gobem-proc-wrap-script": "*",
+        "gobem-proc-component": "*"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": {
+        "name": "Stepan Zhevak",
+        "email": "enet@protonmail.ch",
+        "url": "zhevak.name"
+    },
+    "license": "GPLv3"
+}

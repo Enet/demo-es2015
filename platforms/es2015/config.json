@@ -1,0 +1,42 @@
+{
+    "toLoad": ["routing.yml"],
+    "queue": {
+        "content": ["parser", "session-get", "auth", "router", "wrapper", "page", "session-set", "renderer"],
+        "api": ["parser", "session-get", "auth", "api", "session-set", "responder"]
+    },
+    "session": {
+        "timeout": null,
+        "refresh": true,
+        "cookie": "__SESSION__"
+    },
+    "gobem": {
+        "beforeBuilding": null,
+        "afterBuilding": null,
+
+        "rootDir": "gobem",
+        "outputDir": "statics/output",
+        "buildFile": "build.gb",
+        "excludePath": "statics",
+        "depTech": "deps.json",
+
+        "buildLangs": [""],
+        "buildTechs": ["css", "styl", "js", "html", "jst", "node.js", "deps.json"],
+        "buildLoaders": ["css", "styl", "js", "html", "jst"],
+
+        "extraArguments": [],
+
+        "maxExecutionTime": 60,
+        "clearOutput": true,
+        "overwriteOutput": true,
+
+        "rebuildByWatcher": true,
+        "rebuildByFile": [
+            "build.gb",
+            "styles/common/common.styl",
+            "styles/common/common:en.styl",
+            "styles/common/common:ru.styl"
+        ],
+        "rebuildByTimer": 0,
+        "rebuildByError": 5
+    }
+}

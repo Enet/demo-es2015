@@ -1,0 +1,35 @@
++module('b-todo-item')
+    display block
+    position relative
+
++module('b-todo-item::shadow')
+    input
+        vertical-align top
+        margin-top -30px
+        relative top 31px left 0
+
+    label
+        absolute top 0 left 20px
+        box-sizing border-box
+        display inline-block
+        width 100%
+        overflow ellipsis
+        padding 0 40px 0 0
+
+    div
+        absolute top 7px right 0
+        display inline-block
+        border 1px $color_red solid
+        background $color_white
+        color $color_red
+        cursor pointer
+        border-radius 50%
+        height 16px
+        width 16px
+        font-size 11px
+        line-height 16px
+        text-align center
+
+        &:hover
+            background $color_red
+            color $color_white

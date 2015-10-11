@@ -1,0 +1,13 @@
+*.sublime-project
+*.sublime-workspace
+demo-es2015.todo
+npm-debug.log
+debug.log
+node_modules/*
+platforms/*/gobem/statics/output
+platforms/*/node_modules/*
+!platforms/*/node_modules/gobem-proc-component
+!platforms/*/node_modules/gobem-proc-jst
+!platforms/*/node_modules/gobem-proc-set-handler
+!platforms/*/node_modules/gobem-proc-serve
+!platforms/*/node_modules/gobem-proc-wrap-script

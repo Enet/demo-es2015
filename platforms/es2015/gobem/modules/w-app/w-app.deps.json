@@ -1,0 +1,6 @@
+{
+    "styles": ["reset"],
+    "scripts": ["zepto", "beat", "configurator"],
+    "services": ["ajax", "blablabla"],
+    "modules": ["s-menu", "__item"]
+}

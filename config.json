@@ -1,0 +1,7 @@
+{
+    "serverPort": 9090,
+    "rootDir": "/var/www/demo-es2015/platforms",
+    "platformFileName": "index.js",
+    "indexFileName": "index.js",
+    "maxCPUs": 1
+}

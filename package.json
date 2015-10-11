@@ -1,0 +1,19 @@
+{
+    "name": "platformer",
+    "version": "0.0.1",
+    "description": "A small web-server to organize work with multiple platforms.",
+    "main": "index.js",
+    "dependencies": {
+        "chokidar": "*"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": {
+        "name": "Stepan Zhevak",
+        "email": "enet@protonmail.ch",
+        "url": "zhevak.name"
+    },
+    "license": "ISC"
+}

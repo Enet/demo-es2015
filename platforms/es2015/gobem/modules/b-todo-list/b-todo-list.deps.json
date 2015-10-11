@@ -1,0 +1,11 @@
+{
+    "modules": [
+        "_completed_0",
+        "__counter",
+        "b-todo-item",
+        "_hidden",
+        "b-tabulator",
+        "__tab",
+        "_active"
+    ]
+}

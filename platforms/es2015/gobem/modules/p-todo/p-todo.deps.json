@@ -1,0 +1,4 @@
+{
+    "modules": ["b-todo-list", "b-todo-item"],
+    "services": ["ajax"]
+}

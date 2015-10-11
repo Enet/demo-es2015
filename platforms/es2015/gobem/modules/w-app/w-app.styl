@@ -1,0 +1,58 @@
+body
+    font normal 16px/30px sans-serif
+
+body /deep/ input
+    font normal 16px/30px sans-serif
+    height 30px
+    box-sizing border-box
+    padding 0 5px
+    margin 5px 0
+
+body /deep/ button
+    font normal 16px/30px sans-serif
+    height 30px
+    margin 5px 0
+
++module('w-app::shadow')
+    .container
+        relative top 0 left 0
+        box-sizing border-box
+        padding 30px 200px 10px 10px
+        width 100%
+        height 100%
+
+    .border
+        fixed top 0 left 0
+        box-sizing border-box
+        background $color_blue
+        height 0
+        width 0
+
+        &.up,
+        &.down
+            width 100%
+
+        &.left,
+        &.right
+            height 100%
+
+        &.up
+            height 30px
+
+        &.right
+            width 200px
+            left auto
+            right 0
+
+        &.down
+            height 10px
+            top auto
+            bottom 0
+
+        &.left
+            width 10px
+
+    .title
+        font bold 16px/30px sans-serif
+        color: $color_white
+        margin-left 10px

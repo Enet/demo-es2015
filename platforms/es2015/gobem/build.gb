@@ -1,0 +1,33 @@
+select 0 ^modules\/([pw]-\w+)\/\1\.node\.js$
+process gobem-proc-set-handler
+
+select 0 ^modules\/([pw]-\w+)\/\1\.jst$
+process gobem-proc-jst
+
+select 0 [^.]+\.css$
+process gobem-proc-filter
+write 10
+
+select 0 [^.]+\.styl$
+process gobem-proc-filter
+process gobem-proc-stylus styles/common/common
+process gobem-proc-sqwish
+write 10
+
+select 0 [^.]+\.js$
+write 1
+
+select 0 ^modules\/[^.]+\.(js|styl|html)$
+process gobem-proc-component
+write 1
+
+select 1 ^[^.]+\.html$
+write 10
+
+select 1 ^[^.]+\.js$
+process gobem-proc-serve
+process gobem-proc-prettydiff
+process gobem-proc-filter
+process gobem-proc-wrap-script
+write 10
+

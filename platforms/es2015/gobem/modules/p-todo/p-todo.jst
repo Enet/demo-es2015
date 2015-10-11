@@ -1,0 +1,12 @@
+<p-todo>
+    <b-todo-list>
+        <?
+            for (let id in items) {
+                let item = items[id];
+        ?>
+        <b-todo-item id="<?= id ?>" <?= item.completed ? 'completed' : '' ?>><?= item.text ?></b-todo-item>
+        <?
+            }
+        ?>
+    </b-todo-list>
+</p-todo>

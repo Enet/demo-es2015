@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8" />
+        <title><?= title ?></title>
+        <script>
+            'use strict';
+            window.init = {
+                client: <?= JSON.stringify(client) ?>,
+                title: '<?= title.replace(/\'/g, "\'") ?>',
+                url: '<?= url.replace(/\'/g, "\'") ?>',
+                getTemplateFor: function (tagName) {
+                    tagName = tagName.split('__');
+                    let modulePath = tagName[0] + '/' + (tagName[1] ? tagName[1] + '/' + tagName[1] : tagName[0]),
+                        link = document.querySelector(`[href="/output/modules/${modulePath}.html"]`);
+                    return (link && link.import) ? link.import.querySelector('template') : null;
+                }
+            };
+        </script>
+        <?
+            echo('\n');
+            wrapper.files.css.forEach(css => {
+                echo(`<link loaded rel="stylesheet" href="/output/${css}" />\n`);
+            });
+
+            wrapper.files.js.forEach(js => {
+                echo(`<link loaded rel="import" href="/output/${js}" />\n`);
+            });
+
+            wrapper.components.css.forEach(css => {
+                echo(`<link loaded rel="stylesheet" href="/output/${css}" />\n`);
+            });
+
+            wrapper.components.html.forEach(html => {
+                echo(`<link loaded rel="import" href="/output/${html}" />\n`);
+            });
+
+            wrapper.components.js.forEach(js => {
+                echo(`<link loaded rel="import" href="/output/${js}" />\n`);
+            });
+
+            echo('\n');
+            page.files.css.forEach(css => {
+                echo(`<link loaded rel="stylesheet" href="/output/${css}" />\n`);
+            });
+
+            page.files.js.forEach(js => {
+                echo(`<link loaded rel="import" href="/output/${js}" />\n`);
+            });
+
+            page.components.css.forEach(css => {
+                echo(`<link loaded rel="stylesheet" href="/output/${css}" />\n`);
+            });
+
+            page.components.html.forEach(html => {
+                echo(`<link loaded rel="import" href="/output/${html}" />\n`);
+            });
+
+            page.components.js.forEach(js => {
+                echo(`<link loaded rel="import" href="/output/${js}" />\n`);
+            });
+        ?>
+    </head>
+    <body>
+        <w-app auth="<?= auth.login || '' ?>">
+            <?= content ?>
+        </w-app>
+    </body>
+</html>
