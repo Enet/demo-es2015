@@ -13,12 +13,15 @@ This project is just an experiment (don't use the code in production). My goal w
 + Sometimes garbage collector removes DOM earler than you stop to use it. Thankfully there is a new class WeakSet.
 
 ## How to install
+First of all install nginx with spdy, npm, node v4+ and redis.
 ```sh
 git clone git@github.com:Enet/demo-es2015.git
 cd demo-es2015
 sudo sh deploy.sh
 node index.js
 ```
+That's all! Open your browser and visit [https://es2015.node.xyz](https://es2015.node.xyz).
+
 Make sure that you already have generated SSL certificate (read /etc/nginx/nginx-demo-es2015).
 
 ## How it works
