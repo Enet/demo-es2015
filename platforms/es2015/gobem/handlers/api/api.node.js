@@ -12,7 +12,7 @@ global[Symbol(__filename)] = chokidar.watch(__dirname, {
 
 module.exports = function (app) {
     return function ($) {
-        let filePath = mapURItoFS($.url.path);
+        let filePath = mapURItoFS($.url.pathname);
         try {
             let handler = require(filePath);
             handler($, (status, data) => {

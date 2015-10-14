@@ -29,7 +29,7 @@ module.exports = function (app) {
                     let id = hash.digest('hex') + '#' + time;
 
                     reddiz
-                        .set(id, {}, time, sessionConfig.timeout)
+                        .set(id, {}, sessionConfig.timeout, time)
                         .then(next)
                         .catch($.next);
                 }

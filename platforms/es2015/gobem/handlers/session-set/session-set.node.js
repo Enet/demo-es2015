@@ -20,7 +20,7 @@ module.exports = function (app) {
         }
 
         reddiz
-            .set(session.id, $.session, time, timeout)
+            .set(session.id, $.session, timeout, time)
             .then(() => $.next())
             .catch($.next);
     };

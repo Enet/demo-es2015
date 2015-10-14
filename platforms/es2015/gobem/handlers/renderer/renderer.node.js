@@ -14,7 +14,7 @@ module.exports = function (app) {
             wrapperData = $.server.wrapper || {};
 
         destination.wrapper = ($.get.wrapper || destination.wrapper).toLowerCase();
-        app.getPagePromise(`modules*${destination.page}+modules*${destination.wrapper}:`).then(pageFiles => {
+        app.getPagePromise(`modules/${destination.page}+modules/${destination.wrapper}:`).then(pageFiles => {
             let pageTemplate = app.getTemplate(path.join('modules', destination.page, destination.page + '.jst')),
                 pageContent = pageTemplate(pageData);
 
@@ -28,7 +28,7 @@ module.exports = function (app) {
                 $.echo(JSON.stringify(wrapperData));
                 $.next();
             } else {
-                app.getPagePromise(`modules*${destination.wrapper}+modules*${destination.wrapper}:`).then(wrapperFiles => {
+                app.getPagePromise(`modules/${destination.wrapper}+modules/${destination.wrapper}:`).then(wrapperFiles => {
                     wrapperData.wrapper = sortAndFilterFiles(wrapperFiles);
                     let wrapperTemplate = app.getTemplate(path.join('modules', destination.wrapper, destination.wrapper + '.jst')),
                         wrapperContent = wrapperTemplate(wrapperData);

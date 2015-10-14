@@ -2,7 +2,7 @@
     <h1>How it works</h1>
 
     <h2><a target="_blank" href="https://github.com/Enet/demo-es2015">platformer</a></h2>
-    <p>This is a root application, which watches the root directory for changes. When the platform (the separate application) is detected, platformer try to require index file. If it ends with success, platformer starts to delegate requests to the platform. The name of the platform should be contained into a header &lt;platform&gt;. All events are logged.</p>
+    <p>This is a root application, which watches the root directory for changes. When the platform (the separate application) is detected, platformer try to require index file. If it ends with success, platformer starts to delegate requests to the platform. The name of the platform should be contained into a header <code>platform</code>. All events are logged.</p>
     <p>Platformer allows several independent applications to be working at the same time and reload server-side files after changes without reloading Node.js.</p>
 
     <h2><a target="_blank" href="https://github.com/Enet/demo-es2015">es2015</a></h2>
@@ -21,10 +21,10 @@
 
     <h2>gobem-proc-*</h2>
     <p>As it was said above, gobem uses processors to process project files. Some of them (used in this project) are described below:</p>
-    <p><b><a target="_blank" href="https://github.com/Enet/gobem-proc-concat">gobem-proc-concat</a></b> - is a processor to concatenate several files into one. It has one option - the name of the result file.</p>
+    <p><b><a target="_blank" href="https://github.com/Enet/gobem-proc-concat">gobem-proc-concat</a></b> - is a processor to concatenate several files into one. It has one option - the name of the resulting file.</p>
     <p><b><a target="_blank" href="https://github.com/Enet/gobem-proc-filter">gobem-proc-filter</a></b> - is a processor to filter all unexisting or empty files. It has no options.</p>
-    <p><b><a target="_blank" href="https://github.com/Enet/gobem-proc-stylus">gobem-proc-stylus</a></b> - is a processor to compile Stylus to CSS. It has one option - the path to the file common.styl, which be included in the beginning of each processing file.</p>
-    <p><b><a target="_blank" href="https://github.com/Enet/gobem-proc-sqwish">gobem-proc-sqwish</a></b> - is a processor to minify CSS files. It has no options.</p>
+    <p><b><a target="_blank" href="https://github.com/Enet/gobem-proc-stylus">gobem-proc-stylus</a></b> - is a processor to compile Stylus to CSS. It has two options: the path to the file with common styles, which is included in the beginning of each file, and <code>no-nib</code> flag, which revokes using nib.</p>
+    <p><b><a target="_blank" href="https://github.com/Enet/gobem-proc-sqwish">gobem-proc-sqwish</a></b> - is a processor to minify CSS files. It has only one argument <code>ignore-errors</code>.</p>
     <p><b><a target="_blank" href="https://github.com/Enet/gobem-proc-prettydiff">gobem-proc-prettydiff</a></b> - is a processor to minify both CSS and JavaScript files. It has one interesting feature: you can add the line <code>/* prevent prettydiff */</code> in any place of a file to prevent the processing by prettydiff.</p>
     <p><b>gobem-proc-jst</b> - is a processor to make template-functions from *.jst files and store ones, using method <code>app.setTemplate(fn)</code>. It requires application object, passed as a first extra argument.</p>
     <p><b>gobem-proc-set-handler</b> - is a processor to require handlers and store ones, using method <code>app.setHandler(fn)</code>. It requires application object, passed as a first extra argument.</p>

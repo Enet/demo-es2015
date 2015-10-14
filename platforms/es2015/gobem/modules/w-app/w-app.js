@@ -97,6 +97,7 @@ beat.registerElement('w-app', {
             if (element.tagName &&
                 element.tagName.toLowerCase() === 'a' &&
                 !element.hasAttribute('target', '_blank') &&
+                element.getAttribute('href') &&
                 !~element.getAttribute('href').indexOf('//')) {
                 event.anchorTarget = element;
                 return this._onLinkClick(event);
