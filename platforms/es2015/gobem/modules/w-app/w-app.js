@@ -150,7 +150,7 @@ beat.registerElement('w-app', {
                 if (lastResourcesLoadingId === resourcesLoadingId) {
                     $elements.attr('loaded', 'loaded');
                     this.innerHTML = data.content;
-                    history.pushState(data.client, data.title, data.url);
+                    history.pushState(data.client, document.title = data.title, data.url);
                     this._onPageUpdate();
                 } else {
                     $elements.remove();

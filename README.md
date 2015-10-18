@@ -45,25 +45,25 @@ This module is a builder for BEM projects. It has a lot of options and does the 
 Read the documentation or sources to know what options are available and how gobem does processing.
 
 ### gobem-proc-*
-As it was said above, gobem uses processors to process project files. Some of them (used in this project) are described below:
+The module gobem processes project files, using so-called processors - separate modules, which gets certain file's set and returns another one. Some of them (used in this project) are described below:
 
-**[gobem-proc-concat](https://github.com/Enet/gobem-proc-concat)** - is a processor to concatenate several files into one. It has one option - the name of the result file.
+**[gobem-proc-concat](https://github.com/Enet/gobem-proc-concat)** - is a processor to concatenate several files into one. It has one option - the name of the resulting file.
 
 **[gobem-proc-filter](https://github.com/Enet/gobem-proc-filter)** - is a processor to filter all unexisting or empty files. It has no options.
 
-**[gobem-proc-stylus](https://github.com/Enet/gobem-proc-stylus)** - is a processor to compile Stylus to CSS. It has one option - the path to the file common.styl, which be included in the beginning of each processing file.
+**[gobem-proc-stylus](https://github.com/Enet/gobem-proc-stylus)** - is a processor to compile Stylus to CSS. It gets an object of options. Redis options, common styles and `no-nib` flag are supported.
 
-**[gobem-proc-sqwish](https://github.com/Enet/gobem-proc-sqwish)** - is a processor to minify CSS files. It has no options.
+**[gobem-proc-sqwish](https://github.com/Enet/gobem-proc-sqwish)** - is a processor to minify CSS files. It get an object of options. Redis options and `ignoreErrors` flag are supported.
 
-**[gobem-proc-prettydiff](https://github.com/Enet/gobem-proc-prettydiff)** - is a processor to minify both CSS and JavaScript files. It has one interesting feature: you can add the line `/* prevent prettydiff */` in any place of a file to prevent the processing by prettydiff.
+**[gobem-proc-prettydiff](https://github.com/Enet/gobem-proc-prettydiff)** - is a processor to minify both CSS and JavaScript files. It has one interesting feature: you can add the line `/* prevent prettydiff */` in any place of a file to prevent the processing by prettydiff. Redis options and `ignoreErrors` flag are supported.
 
-**gobem-proc-jst** - is a processor to make template-functions from *.jst files and store ones, using method `app.setTemplate(fn)`. It requires application object, passed as a first extra argument.
+**[gobem-proc-justjst](https://github.com/Enet/gobem-proc-justjst)** - is a processor to make template-functions from *.jst files, it passes the template to the callback function.
 
-**gobem-proc-set-handler** - is a processor to require handlers and store ones, using method `app.setHandler(fn)`. It requires application object, passed as a first extra argument.
+**gobem-proc-set-handler** - is a processor to require handlers, it passes the handler to the callback function.
 
-**gobem-proc-wrap-script** - is a processor, which renames *.js to *.js.html and wraps content into the script tag. It allows to import scripts in the same way as templates. Processor has no options.
+**gobem-proc-wrap-script** - is a processor, which renames *.js to *.js.html and wraps content into the script tag. It allows to import scripts in the same way as templates. The processor has no options.
 
-**gobem-proc-serve** - is a processor to wrap content into the function. It allows to use services, defined in *.deps.json, in the body of scripts. There are no options.
+**gobem-proc-serve** - is a processor to wrap content into the function. It allows to use services, defined in *.deps.json, in the body of scripts. There are two options: prefix and postfix strings.
 
 **gobem-proc-component** - is a processor, making a web-component from several files. It has no options.
 
@@ -83,7 +83,7 @@ The easiest template engine to compile javascript templates. The module returns 
 Are there some options? No. All you can use is constructions like `<? echo('9 + 16 = 25') ?>` and `<?= 2 * 2 === 4 ?>`.
 
 ### [reddiz](https://github.com/Enet/reddiz)
-No one serious web-application can not do without sessions. As you may be already guessed, reddiz provides API to store sessions using redis database. There are only two easy methods: get and set. To process user request properly you need firstly read session, then probably change it and finally save changes.
+No one serious web-application can not do without sessions. There is easy solution to implement ones - reddiz provides API to store sessions using redis database. There are only two easy methods: get and set. To process user request properly you need firstly read session, then probably change it and finally save changes.
 
 ### [beat](https://github.com/Enet/beat)
 Web components give us a lot of new features: custom elements, templates, HTML imports and shadow DOM. But how to map ones over BEM architecture? I tried to make it and created this library.

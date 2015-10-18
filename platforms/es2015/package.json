@@ -1,6 +1,6 @@
 {
     "name": "es2015",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Demonstrative platform to build the project based on web-components architecture.",
     "main": "index.js",
     "dependencies": {
@@ -16,7 +16,7 @@
         "gobem-proc-stylus": "*",
         "gobem-proc-sqwish": "*",
         "gobem-proc-prettydiff": "*",
-        "gobem-proc-jst": "*",
+        "gobem-proc-justjst": "*",
         "gobem-proc-serve": "*",
         "gobem-proc-set-handler": "*",
         "gobem-proc-wrap-script": "*",

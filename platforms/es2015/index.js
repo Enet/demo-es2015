@@ -3,7 +3,6 @@ let path = require('path'),
     fs = require('fs'),
     async = require('async'),
     gobem = require('gobem'),
-    justjst = require('justjst'),
     alasym = require('alasym'),
     reqponse = require('reqponse'),
     app;
@@ -19,31 +18,31 @@ app = {
         );
 
         config.gobem.rootDir = path.join(__dirname, config.gobem.rootDir);
-        config.gobem.extraArguments.push(this);
         config.gobem.beforeBuilding = beforeBuilding;
         config.gobem.afterBuilding = afterBuilding;
         config.gobem.rebuildByFile = config.toLoad.concat(config.gobem.rebuildByFile);
+        config.gobem.buildInstructions = require(path.join(config.gobem.rootDir, 'build.js'))(app);
 
         gobem.configure(config.gobem).build();
         return this;
     },
 
     setHandler: function (name, handler) {
-        this._handlers[name] = handler;
+        app._handlers[name] = handler;
         return this;
     },
 
     getHandler: function (name) {
-        return this._handlers[name];
+        return app._handlers[name];
     },
 
     setTemplate: function (name, template) {
-        this._templates[name] = justjst(template);
+        app._templates[name] = template;
         return this;
     },
 
     getTemplate: function (name) {
-        return this._templates[name];
+        return app._templates[name];
     },
 
     getPagePromise: function (name) {
@@ -72,7 +71,7 @@ app = {
         }, error => {
             if (error instanceof app.RedirectError) {
                 $.status = 302;
-                $.header.set('Location', 'https://' + $.header.get('host') + error.url + $.url.parsed.search);
+                $.header.set('Location', 'https://' + $.header.get('host') + error.url + ($.url.parsed.search || ''));
             } else if (error && error !== buildError) {
                 $.error(error);
             }
