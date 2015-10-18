@@ -51,9 +51,9 @@ The module gobem processes project files, using so-called processors - separate 
 
 **[gobem-proc-filter](https://github.com/Enet/gobem-proc-filter)** - is a processor to filter all unexisting or empty files. It has no options.
 
-**[gobem-proc-stylus](https://github.com/Enet/gobem-proc-stylus)** - is a processor to compile Stylus to CSS. It gets an object of options. Redis options, common styles and `no-nib` flag are supported.
+**[gobem-proc-stylus](https://github.com/Enet/gobem-proc-stylus)** - is a processor to compile Stylus to CSS. It gets an object of options. Redis options, common styles and `noNib` flag are supported.
 
-**[gobem-proc-sqwish](https://github.com/Enet/gobem-proc-sqwish)** - is a processor to minify CSS files. It get an object of options. Redis options and `ignoreErrors` flag are supported.
+**[gobem-proc-sqwish](https://github.com/Enet/gobem-proc-sqwish)** - is a processor to minify CSS files. It gets an object of options. Redis options and `ignoreErrors` flag are supported.
 
 **[gobem-proc-prettydiff](https://github.com/Enet/gobem-proc-prettydiff)** - is a processor to minify both CSS and JavaScript files. It has one interesting feature: you can add the line `/* prevent prettydiff */` in any place of a file to prevent the processing by prettydiff. Redis options and `ignoreErrors` flag are supported.
 
