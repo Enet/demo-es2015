@@ -5,6 +5,7 @@ npm-debug.log
 debug.log
 node_modules/*
 platforms/*/gobem/statics/output
+platforms/*/gobem/cache
 platforms/*/node_modules/*
 !platforms/*/node_modules/gobem-proc-component
 !platforms/*/node_modules/gobem-proc-jst

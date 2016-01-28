@@ -1,4 +1,10 @@
+'use strict';
+
+let path = require('path');
+
 module.exports = function (app) {
+    let cacheDir = path.join(app.config.gobem.rootDir, 'cache');
+
     return [
         ['select', 0, /^modules\/([pw]-\w+)\/\1\.node\.js$/],
         ['gobem-proc-set-handler', app.setHandler, [app]],
@@ -12,8 +18,13 @@ module.exports = function (app) {
 
         ['select', 0, /[^.]+\.styl$/],
         ['gobem-proc-filter'],
-        ['gobem-proc-stylus', {commonStylus: 'styles/common/common'}],
-        ['gobem-proc-sqwish'],
+        ['gobem-proc-stylus', {
+            commonStylus: 'styles/common/common',
+            cacheDir
+        }],
+        ['gobem-proc-sqwish', {
+            cacheDir
+        }],
         ['write', 10],
 
         ['select', 0, /[^.]+\.js$/],
@@ -28,7 +39,9 @@ module.exports = function (app) {
 
         ['select', 1, /^[^.]+\.js$/],
         ['gobem-proc-serve', 'beat.serveFunction([$SERVICES], ($ARGUMENTS) => {', '});\n'],
-        ['gobem-proc-prettydiff'],
+        ['gobem-proc-prettydiff', {
+            cacheDir
+        }],
         ['gobem-proc-filter'],
         ['gobem-proc-wrap-script'],
         ['write', 10]
