@@ -2,7 +2,7 @@
 cd "$(dirname "$0")"
 npm install
 cd platforms/es2015
-mkdir -p gobem/cache
+mkdir -p -m 777 gobem/cache
 npm install
 cd ../..
 
